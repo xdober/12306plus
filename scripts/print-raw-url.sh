@@ -18,9 +18,9 @@ MSG
 fi
 
 slug=""
-if [[ "$remote" =~ ^git@([^:]+):(.+?)(\.git)?$ ]]; then
-  slug="${BASH_REMATCH[2]}"
-elif [[ "$remote" =~ ^https?://[^/]+/(.+?)(\.git)?$ ]]; then
+if [[ "$remote" =~ ^git@[^:]+:(.+)$ ]]; then
+  slug="${BASH_REMATCH[1]}"
+elif [[ "$remote" =~ ^https?://[^/]+/(.+)$ ]]; then
   slug="${BASH_REMATCH[1]}"
 fi
 slug="${slug%.git}"
